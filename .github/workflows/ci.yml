@@ -40,9 +40,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and Push Docker image
+      - name: Build and Push Docker Image
         run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository }}/flask-microservice:latest
-          cd app
-          docker build -t $IMAGE_NAME .
-          docker push $IMAGE_NAME
+          IMAGE_NAME=ghcr.io/${{ github.repository }}/flask-micro-service
+          docker build -t $IMAGE_NAME:${{ github.sha }} ./app
+          docker push $IMAGE_NAME:${{ github.sha }}
