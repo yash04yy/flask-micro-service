@@ -8,6 +8,11 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read         # needed to checkout/read repo content
+  packages: write        # allow creating/pushing packages to GHCR
+  id-token: write        # optional: needed if using OIDC for cloud auth
+
 jobs:
   build-test:
     runs-on: ubuntu-latest
