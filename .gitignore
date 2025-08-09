@@ -4,3 +4,9 @@ venv/
 app/venv/
 .DS_Store
 .pytest_cache/
+infra/terraform.tfstate
+infra/terraform.tfstate.backup
+infra/.terraform/
+infra/*.tfplan
+infra/crash.log
+infra/*.tfvars
